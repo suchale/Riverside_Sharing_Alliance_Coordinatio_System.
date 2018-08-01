@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include head %>
+</head>
+<body class="container">
+
+<header>
+    <% include header %>
+</header>
+
+<main role="main" class="inner cover">
+    <h1><%=title%></h1>
+		  <table class="table">
+          <tr>
+              <th>Site_id</th>
+              <th>ShortName</th>
+              <th>Address Line 1</th>
+              <th>Site_id</th>
+              <th>Site_id</th> 
+              <th>Site_id</th>
+              <th>Site_id</th>
+              <th>Site_id</th>
+              <th>Site_id</th>
+              <th>Site_id</th>
+          </tr>
+               
+            <tr>
+            <% records.forEach(function(site) { %>  
+               <%  for(var property in site){ %>
+                   <% if(site.hasOwnProperty(property)){ %>        
+                        <td><%= site[property] %></td>
+                    <%}%>     
+                <% }%>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+		  <% }); %>
+    </table>
+</main>
+
+<footer>
+    <% include footer %>
+</footer>
+
+</body>
+</html>
